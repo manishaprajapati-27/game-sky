@@ -2,7 +2,7 @@ const App = () => {
   return (
     <>
       <div>
-        <h1>Hello Game Sky</h1>
+        <h1>Hello In Game Sky</h1>
       </div>
     </>
   );
