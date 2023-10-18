@@ -2,7 +2,7 @@
 
 const base_url = "https://api.rawg.io/api/";
 
-console.log(popular_games_new);
+// console.log(popular_games_new);
 
 // Getting the month
 const getCurrentMonth = () => {
@@ -38,6 +38,8 @@ console.log(nextYear);
 
 getCurrentMonth();
 
-const popular_games = `games?key=${process.env.REACT_APP_GAME_SKY_API}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const popular_games = `games?key=${
+  import.meta.env.GAMESKY_API
+}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
 
 export const popularGamesURL = () => `${base_url}${popular_games}`;
