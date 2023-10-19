@@ -32,14 +32,19 @@ const currentDay = getCurrentDay();
 const currentDate = `${currentYear}-${CurrentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${CurrentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${CurrentMonth}-${currentDay}`;
-console.log(currentDate);
-console.log(lastYear);
-console.log(nextYear);
+// console.log(currentDate);
+// console.log(lastYear);
+// console.log(nextYear);
 
-getCurrentMonth();
+// getCurrentMonth();
 
-const popular_games = `games?key=${
-  import.meta.env.GAMESKY_API
-}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+// const popular_games = `games?key=${
+//   import.meta.env.GAMESKY_API
+// }&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const popular_games = `games?key=180066f998144f90868689c105f8144c&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const upcoming_games = `games?key=180066f998144f90868689c105f8144c&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
+const new_games = `games?key=180066f998144f90868689c105f8144c&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
 export const popularGamesURL = () => `${base_url}${popular_games}`;
+export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
+export const newGamesURL = () => `${base_url}${new_games}`;
