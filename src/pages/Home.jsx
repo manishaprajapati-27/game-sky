@@ -20,25 +20,55 @@ const Home = () => {
   const { popular, upComing, newGames } = useSelector((state) => state.games);
   //   console.log(games);
   return (
-    <GameList>
-      <h2>Upcoming Games</h2>
-      <Games>
-        {upComing.map((game) => (
-          <Game
-            name={game.name}
-            released={game.released}
-            id={game.id}
-            image={game.background_image}
-            key={game.id}
-          />
-        ))}
-      </Games>
-    </GameList>
+    <>
+      <GameList>
+        <h2 className="heading">Upcoming Games</h2>
+        <Games>
+          {upComing.map((game) => (
+            <Game
+              name={game.name}
+              released={game.released}
+              id={game.id}
+              image={game.background_image}
+              key={game.id}
+            />
+          ))}
+        </Games>
+      </GameList>
+      <GameList>
+        <h2 className="heading">New Games</h2>
+        <Games>
+          {newGames.map((game) => (
+            <Game
+              name={game.name}
+              released={game.released}
+              id={game.id}
+              image={game.background_image}
+              key={game.id}
+            />
+          ))}
+        </Games>
+      </GameList>
+      <GameList>
+        <h2 className="heading">Popular Games</h2>
+        <Games>
+          {popular.map((game) => (
+            <Game
+              name={game.name}
+              released={game.released}
+              id={game.id}
+              image={game.background_image}
+              key={game.id}
+            />
+          ))}
+        </Games>
+      </GameList>
+    </>
   );
 };
 
 const GameList = styled(motion.div)`
-  padding: 0 50px;
+  padding: 40px 50px;
   h2 {
     padding: 30px 0;
   }
