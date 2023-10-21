@@ -50,6 +50,6 @@ export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${new_games}`;
 
 // Game Details
-const gameDetailsURL = (game_id) => `
-  ${base_url}games/${game_id}
+export const gameDetailsURL = (game_id) => `
+  ${base_url}games?key=180066f998144f90868689c105f8144c&=${game_id}
 `;

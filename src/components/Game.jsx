@@ -3,9 +3,17 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Game = ({ name, released, image }) => {
+// Redux
+import { useDispatch } from "react-redux";
+import { loadDetail } from "../actions/detailAction";
+
+const Game = ({ name, released, image, id }) => {
+  const dispatch = useDispatch();
+  const loadDetailHandler = () => {
+    dispatch(loadDetail(id));
+  };
   return (
-    <StyledGame>
+    <StyledGame onClick={loadDetailHandler}>
       <div className="image">
         <img src={image} alt={name} />
       </div>
@@ -23,6 +31,7 @@ const StyledGame = styled(motion.div)`
   border-radius: 7px;
   background: #18191a;
   overflow: hidden;
+  cursor: pointer;
 
   .image {
     width: 100%;
