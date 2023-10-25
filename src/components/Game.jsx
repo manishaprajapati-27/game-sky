@@ -18,6 +18,7 @@ const Game = ({ name, released, image, id }) => {
         <img src={image} alt={name} />
       </div>
       <div className="text">
+        <p>{id}</p>
         <h3>{name}</h3>
         <p>{released}</p>
       </div>

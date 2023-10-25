@@ -95,7 +95,7 @@ p {
   font-size: 40px;
   font-weight: bold;
   color: #fff;
-  font-family: 'El Messiri', sans-serif;;
+  font-family: 'El Messiri', sans-serif;
 }
 `;
 

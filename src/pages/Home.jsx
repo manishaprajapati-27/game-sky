@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 // Components
 import Game from "../components/Game";
+import GameDetail from "../components/GameDetail";
 // Styles & Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -22,6 +23,7 @@ const Home = () => {
   return (
     <>
       <GameList>
+        {/* <GameDetail /> */}
         <h2 className="heading">Upcoming Games</h2>
         <Games>
           {upComing.map((game) => (
