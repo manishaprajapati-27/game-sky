@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { smallImage } from "../util";
 // Styles & Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -10,18 +12,21 @@ import { loadDetail } from "../actions/detailAction";
 const Game = ({ name, released, image, id }) => {
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden";
     dispatch(loadDetail(id));
   };
   return (
     <StyledGame onClick={loadDetailHandler}>
-      <div className="image">
-        <img src={image} alt={name} />
-      </div>
-      <div className="text">
-        <p>{id}</p>
-        <h3>{name}</h3>
-        <p>{released}</p>
-      </div>
+      <Link to={`/game/${id}`}>
+        <div className="image">
+          <img src={smallImage(image, 600, 400)} alt={name} />
+        </div>
+        <div className="text">
+          <p>{id}</p>
+          <h3>{name}</h3>
+          <p>{released}</p>
+        </div>
+      </Link>
     </StyledGame>
   );
 };
