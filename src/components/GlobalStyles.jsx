@@ -96,6 +96,10 @@ p {
   font-weight: bold;
   color: #fff;
   font-family: 'El Messiri', sans-serif;
+  border-left: 7px solid #0fa1e6;
+  padding: 4px 15px;
+  margin: 30px 0;
+
 }
 `;
 

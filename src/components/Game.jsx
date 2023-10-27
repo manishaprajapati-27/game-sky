@@ -4,26 +4,41 @@ import { smallImage } from "../util";
 // Styles & Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { zoomIn } from "../animation";
 
 // Redux
 import { useDispatch } from "react-redux";
 import { loadDetail } from "../actions/detailAction";
 
 const Game = ({ name, released, image, id }) => {
+  const stringPathId = id.toString();
+
+  // Load detail handler
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
     document.body.style.overflow = "hidden";
     dispatch(loadDetail(id));
+    console.log(typeof id);
   };
   return (
-    <StyledGame onClick={loadDetailHandler}>
+    <StyledGame
+      variants={zoomIn}
+      initial="hidden"
+      animate="show"
+      layoutId={stringPathId}
+      onClick={loadDetailHandler}
+    >
       <Link to={`/game/${id}`}>
         <div className="image">
-          <img src={smallImage(image, 600, 400)} alt={name} />
+          <motion.img
+            layoutId={`image ${stringPathId}`}
+            src={smallImage(image, 600, 400)}
+            alt={name}
+          />
         </div>
         <div className="text">
           <p>{id}</p>
-          <h3>{name}</h3>
+          <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
           <p>{released}</p>
         </div>
       </Link>
