@@ -32,11 +32,6 @@ const currentDay = getCurrentDay();
 const currentDate = `${currentYear}-${CurrentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${CurrentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${CurrentMonth}-${currentDay}`;
-// console.log(currentDate);
-// console.log(lastYear);
-// console.log(nextYear);
-
-// getCurrentMonth();
 
 // const popular_games = `games?key=${
 //   import.meta.env.GAMESKY_API
