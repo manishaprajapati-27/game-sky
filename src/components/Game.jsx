@@ -37,9 +37,11 @@ const Game = ({ name, released, image, id }) => {
           />
         </div>
         <div className="text">
-          <p>{id}</p>
+          {/* <p>{id}</p> */}
           <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
-          <p>{released}</p>
+          <p>
+            Release Date: <span>{released}</span>
+          </p>
         </div>
       </Link>
     </StyledGame>
@@ -68,9 +70,7 @@ const StyledGame = styled(motion.div)`
 
   .text {
     padding: 20px;
-    text-align: center;
-    width: 80%;
-    margin: auto;
+    width: 100%;
 
     h3 {
       font-size: 20px;
@@ -78,6 +78,12 @@ const StyledGame = styled(motion.div)`
       color: #fff;
       font-weight: 500;
       line-height: 150%;
+    }
+    p {
+      color: #979da0;
+      span {
+        color: #ffffff;
+      }
     }
   }
 `;
