@@ -126,6 +126,11 @@ const CardShadow = styled(motion.div)`
     left: 10%;
     margin: 20px 0;
 
+    @media (max-width: 720px) {
+      width: 80%;
+      padding: 15px;
+    }
+
     img {
       width: 100%;
     }
@@ -136,8 +141,15 @@ const CardShadow = styled(motion.div)`
       gap: 30px;
       margin-bottom: 40px;
 
+      @media (max-width: 720px) {
+        flex-direction: column;
+      }
+
       .stats {
         width: 50%;
+        @media (max-width: 720px) {
+          width: 100%;
+        }
         .rating {
           margin-bottom: 35px;
 
@@ -147,6 +159,10 @@ const CardShadow = styled(motion.div)`
             line-height: 130%;
             font-weight: bold;
             font-family: "El Messiri", sans-serif;
+
+            @media (max-width: 720px) {
+              font-size: 25px;
+            }
           }
 
           p {
@@ -218,6 +234,10 @@ const CardShadow = styled(motion.div)`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+
+    @media (max-width: 720px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
     img {
       border-radius: 7px;
